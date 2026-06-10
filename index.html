@@ -1,128 +1,353 @@
+Save the following code as **`index.html`** and upload it to GitHub. Students can complete the vocabulary tasks online and receive automatic feedback and scores.
 
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About My Family - Writing Exercise</title>
+<title>Intermediate Vocabulary Task - Health and Lifestyle</title>
 
 <style>
-body{
-    font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    background:#f4f6f9;
-}
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 30px;
+        line-height: 1.6;
+    }
 
-.container{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
-}
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        background: white;
+        padding: 35px;
+        border-radius: 10px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
 
-h1,h2{
-    color:#2c3e50;
-}
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+    }
 
-textarea{
-    width:100%;
-    min-height:120px;
-    padding:10px;
-    margin-top:10px;
-}
+    h2 {
+        color: #34495e;
+        margin-top: 30px;
+    }
 
-input{
-    padding:8px;
-    margin:5px;
-}
+    .vocab-box {
+        background-color: #eef5ff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
 
-button{
-    background:#3498db;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:5px;
-    cursor:pointer;
-}
+    input[type="text"],
+    select {
+        padding: 8px;
+        font-size: 15px;
+        margin-top: 5px;
+    }
 
-button:hover{
-    background:#2980b9;
-}
+    textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 10px;
+    }
 
-.correct{
-    color:green;
-    font-weight:bold;
-}
+    button {
+        margin-top: 20px;
+        padding: 12px 24px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
 
-.wrong{
-    color:red;
-    font-weight:bold;
-}
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    #result {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+    }
+
+    .correct {
+        color: green;
+        font-weight: bold;
+    }
+
+    .incorrect {
+        color: red;
+        font-weight: bold;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
 </style>
 </head>
+
 <body>
 
 <div class="container">
 
-<hr>
+    <h1>INTERMEDIATE VOCABULARY TASK</h1>
 
-<h2>Part A: Fill in the blanks</h2>
+    <h2>Topic: Health and Lifestyle</h2>
 
-<p>1. Kelly lives in
-<input id="q1"></p>
+    <p><strong>Instructions:</strong> Read the text below and complete the tasks that follow.</p>
 
-<p>2. Kelly's mother's name is
-<input id="q2"></p>
+    <h3>Healthy Habits for a Better Life</h3>
 
-<p>3. Kelly's father works in a
-<input id="q3"></p>
+    <p>
+        Living a healthy lifestyle is important for maintaining physical and
+        mental well-being. People can improve their health by eating a balanced
+        diet, exercising regularly, and getting enough sleep. Drinking plenty
+        of water and managing stress are also essential habits. Although
+        adopting healthy habits may require effort and discipline, these
+        practices can reduce the risk of illness and improve overall quality
+        of life.
+    </p>
 
-<p>4. Kelly's sister loves listening to
-<input id="q4"></p>
+    <div class="vocab-box">
+        <strong>Vocabulary List:</strong><br><br>
+        balanced diet • exercise • stress • discipline • illness • regularly • improve • quality of life
+    </div>
 
-<p>5. Brandy is a pet
-<input id="q5"></p>
+    <h2>Task A: Match the words with their meanings.</h2>
 
-<button onclick="checkAnswers()">Check Answers</button>
+    <table>
+        <tr>
+            <th>Word</th>
+            <th>Choose the Meaning</th>
+        </tr>
 
-<p id="result"></p>
+        <tr>
+            <td>1. balanced diet</td>
+            <td>
+                <select id="a1">
+                    <option value="">Select</option>
+                    <option value="a">Disease or poor health</option>
+                    <option value="h">A healthy combination of different types of food</option>
+                    <option value="d">The general well-being and satisfaction in life</option>
+                </select>
+            </td>
+        </tr>
 
-<hr>
+        <tr>
+            <td>2. exercise</td>
+            <td>
+                <select id="a2">
+                    <option value="">Select</option>
+                    <option value="c">Activities that keep the body fit and healthy</option>
+                    <option value="b">Self-control and the ability to follow rules</option>
+                    <option value="e">Mental or emotional pressure</option>
+                </select>
+            </td>
+        </tr>
 
-<h2>Part B: Write About Your Family</h2>
+        <tr>
+            <td>3. stress</td>
+            <td>
+                <select id="a3">
+                    <option value="">Select</option>
+                    <option value="g">In a consistent or routine way</option>
+                    <option value="e">Mental or emotional pressure</option>
+                    <option value="f">To make something better</option>
+                </select>
+            </td>
+        </tr>
 
-<p>Write 5–8 sentences about your family.</p>
+        <tr>
+            <td>4. discipline</td>
+            <td>
+                <select id="a4">
+                    <option value="">Select</option>
+                    <option value="a">Disease or poor health</option>
+                    <option value="b">Self-control and the ability to follow rules</option>
+                    <option value="d">The general well-being and satisfaction in life</option>
+                </select>
+            </td>
+        </tr>
 
-<textarea placeholder="My name is..."></textarea>
+        <tr>
+            <td>5. illness</td>
+            <td>
+                <select id="a5">
+                    <option value="">Select</option>
+                    <option value="a">Disease or poor health</option>
+                    <option value="c">Activities that keep the body fit and healthy</option>
+                    <option value="g">In a consistent or routine way</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>6. regularly</td>
+            <td>
+                <select id="a6">
+                    <option value="">Select</option>
+                    <option value="g">In a consistent or routine way</option>
+                    <option value="h">A healthy combination of different types of food</option>
+                    <option value="b">Self-control and the ability to follow rules</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>7. improve</td>
+            <td>
+                <select id="a7">
+                    <option value="">Select</option>
+                    <option value="d">The general well-being and satisfaction in life</option>
+                    <option value="f">To make something better</option>
+                    <option value="e">Mental or emotional pressure</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>8. quality of life</td>
+            <td>
+                <select id="a8">
+                    <option value="">Select</option>
+                    <option value="c">Activities that keep the body fit and healthy</option>
+                    <option value="a">Disease or poor health</option>
+                    <option value="d">The general well-being and satisfaction in life</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Task B: Complete the sentences.</h2>
+
+    <p>1. Doing <input type="text" id="b1"> can strengthen our muscles and improve fitness.</p>
+
+    <p>2. Eating a <input type="text" id="b2"> helps our bodies get the nutrients we need.</p>
+
+    <p>3. Too much <input type="text" id="b3"> can affect both physical and mental health.</p>
+
+    <p>4. People who wash their hands frequently may reduce the risk of <input type="text" id="b4">.</p>
+
+    <p>5. Doctors recommend that people exercise <input type="text" id="b5"> to stay healthy.</p>
+
+    <h2>Task C: Choose the correct answer.</h2>
+
+    <p>
+        1. Which habit is best for maintaining a healthy lifestyle?<br>
+        <select id="c1">
+            <option value="">Select</option>
+            <option value="a">Sleeping late every night</option>
+            <option value="b">Skipping breakfast regularly</option>
+            <option value="c">Exercising several times a week</option>
+            <option value="d">Eating fast food every day</option>
+        </select>
+    </p>
+
+    <p>
+        2. The word "improve" means:<br>
+        <select id="c2">
+            <option value="">Select</option>
+            <option value="a">Reduce</option>
+            <option value="b">Make better</option>
+            <option value="c">Prevent</option>
+            <option value="d">Ignore</option>
+        </select>
+    </p>
+
+    <p>
+        3. Someone with good discipline usually:<br>
+        <select id="c3">
+            <option value="">Select</option>
+            <option value="a">Follows healthy routines consistently</option>
+            <option value="b">Avoids all responsibilities</option>
+            <option value="c">Eats unhealthy food every day</option>
+            <option value="d">Never exercises</option>
+        </select>
+    </p>
+
+    <button onclick="checkAnswers()">Check Answers</button>
+
+    <div id="result"></div>
 
 </div>
 
 <script>
-function checkAnswers(){
 
-let score = 0;
+function checkAnswers() {
 
-const answers = {
-q1:"california",
-q2:"carmen",
-q3:"bank",
-q4:"music",
-q5:"dog"
-};
+    const answers = {
+        a1: "h",
+        a2: "c",
+        a3: "e",
+        a4: "b",
+        a5: "a",
+        a6: "g",
+        a7: "f",
+        a8: "d",
+        b1: "exercise",
+        b2: "balanced diet",
+        b3: "stress",
+        b4: "illness",
+        b5: "regularly",
+        c1: "c",
+        c2: "b",
+        c3: "a"
+    };
 
-for(let id in answers){
-let user = document.getElementById(id).value.trim().toLowerCase();
+    let score = 0;
+    let total = Object.keys(answers).length;
 
-if(user === answers[id]){
-score++;
+    for (let key in answers) {
+
+        let userAnswer = document.getElementById(key).value
+            .trim()
+            .toLowerCase();
+
+        if (userAnswer === answers[key]) {
+            score++;
+        }
+    }
+
+    let percentage = Math.round((score / total) * 100);
+
+    let message = "";
+
+    if (percentage >= 80) {
+        message = "<p class='correct'>Excellent work!</p>";
+    } else if (percentage >= 60) {
+        message = "<p class='correct'>Good job! Keep practicing.</p>";
+    } else {
+        message = "<p class='incorrect'>You need more practice. Try again!</p>";
+    }
+
+    document.getElementById("result").innerHTML =
+        "<h2>Your Result</h2>" +
+        "<p><strong>Score:</strong> " + score + " / " + total + "</p>" +
+        "<p><strong>Percentage:</strong> " + percentage + "%</p>" +
+        message;
 }
-}
 
-document.getElementById("result").innerHTML =
-"You got " + score + " out of 5 correct!";
-}
 </script>
 
 </body>
 </html>
+```
